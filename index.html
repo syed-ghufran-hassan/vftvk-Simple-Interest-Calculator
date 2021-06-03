@@ -1,60 +1,45 @@
+<!DOCTYPE html>
 <html>
     <head>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
+    	<!-- title of the page -->
+        <title>Web App - Simple interest Calculator</title>
+        <!-- link to javascript code -->
+    	<script src="script.js"></script>
+    	<!-- css -->
+    	<link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div class="form">
+        <div class="maindiv">
         <h1>Simple Interest Calculator</h1>
-            <div class="row">
-                <div class="col-5">
-                    <label for="principal">Principal</label>
-                </div>
-                <div class="col-5">
-                    <input type="number" id="principal" name="principal" placeholder="Principal" />
+        <!-- inputting amount -->
+        Amount <input type="number"  id="amount">  <br/>
+        Rate <input type="range" id="rate" min="1" max="20" value="default_val" onchange="updateRate()">
+         <span id="rate_val"></span> 
+        <br/>
+        No. of Years 
+        <select type="number"  id="years">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select><br/>
+        Interest : <span id="result"></span><br>
 
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-5">
-                        <br><label for="rate">Rate</label>
-                    </div>
-                    <div class="col-5">
-                        <br><input type="range" id="rate" onchange="handleChange()" width="300px" name="rate" min="1" max="20" placeholder=" Rate %"/>
-                    </div>
-            </div>
-            <div class="row">
-                <div class="col-5">
-                    <br><label for="time">Time in Months(Note: Intrest Rate are per annum)</label>
-                </div>
-                <div class="col-5">
-                    <br><input type="number" id="time" name="time" placeholder="Duration in months" />
-                </div>
-            </div>
-            <div id="change"></div>
-            <div class="row">
-                <div class="col-5">
-                    <br><label class="col-5" for="simpleintrest">Simple Intrest</label>
-                </div>
-                <div class="col-5">
-                    <b> <br><div class="col-5" id="simpleintrest" name="simpleintrest">
+        <button id="comp" onclick="compute()">Compute Interest</button>
+        </div>
 
-                </div>
-
-                </div> </b>
-            <br></div>
-            <div class="row">
-                <div class="col-5">
-<br>                    <input onclick="handleSubmit(event)" type="submit" id="submit" class="submit" />
-                </div>
-                <br>
-            </div>
-            </div>
+        <footer>
+        	&#169; Everyone can get rich
+		</footer>
+    
     </body>
-    <footer>
-
-        &#169; Everyone can get rich
 
 
-</footer>
 </html>
+© 2021 GitHub, Inc.
