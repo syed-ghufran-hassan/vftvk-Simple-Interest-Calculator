@@ -1,27 +1,29 @@
-/* fonction pour récupérer les valeurs aléatoires du rate*/
-function rateValue(val){
-	document.getElementById('rateInput').value=val;
-
+  
+function compute()
+{
+    var principal = document.getElementById("principal").value;
+    if (principal <= 0) {
+        alert("Enter a positive number")
+        document.getElementById("principal").focus()
+        return
+    }
+    var rate = document.getElementById("rate").value
+    var years = document.getElementById("years").value
+    
+    var amount = principal * years * rate /100;
+    var year = new Date().getFullYear()+parseInt(years);
+    console.log(years, new Date().getFullYear())
+    document.getElementById("result").innerHTML="If you deposit <mark>"+principal+"</mark>,\<br\>at an interest rate of <mark>"+rate+"%</mark>\<br\>You will receive an amount of <mark>"+amount+"</mark>,\<br\>in the year <mark>"+year+"</mark>\<br\>"
 }
 
-/* fonction de calcul de l'intérêt*/
-function calculate(){
-	/* déclaration des variables*/
-amount = document.getElementById('amount').value;
-rateInput= document.getElementById('rateInput').value;
-selectId=document.getElementById('selectId').value;
-resultat=document.getElementById('resultat');
-
-/* calcul du nombre d'année*/
-var today= new Date();
-var annee = today.getFullYear();
-var result1=((annee=+selectId));
-var today2=new Date();
-var annee2 =today2.getFullYear();
-var result2=result1+annee2
-
-/* calul et affichage de l'intérêt*/
-resultat.innerHTML="If you deposit"+"&nbsp;"+(amount)+","+"<br/>"+ "at an interest rate of"+"&nbsp;"+(rateInput)+"."+"<br/>"+
-"You will receive an amount of"+"&nbsp;"+(amount*rateInput*selectId/100)+","+"<br/>"+
-"in the year"+"&nbsp;"+(result2);
+function updateRate() 
+{
+    var rateval = document.getElementById("rate").value;
+    console.log(document.getElementById("rate"))
+    document.getElementById("rate_val").innerText=rateval + '%';
 }
+
+function validatPrincipalInput() {
+
+}
+       
